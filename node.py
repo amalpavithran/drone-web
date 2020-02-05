@@ -61,7 +61,7 @@ async def command_get(websocket, path):
     if f'{command}' == 'id':
         await websocket.send(f'< {call_id}')
     elif 'start' in f'{command}' or f'{command}'=='1':
-        if(f'{command}'==1):
+        if(f'{command}'=='1'):
             path = '/dev/ttyUSB0'
         else:
             path = f'{command}'.split(' ')[1]

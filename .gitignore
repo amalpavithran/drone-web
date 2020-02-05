@@ -1,1 +1,4 @@
-*log
+*.csv
+*.log
+__pycache__/*
+debug.log
