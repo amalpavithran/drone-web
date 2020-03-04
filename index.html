@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <title>
+        Drone Web
+    </title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://s.codepen.io/AndrewBarfield/pen/LEbPJx.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.14.1/js/jquery.terminal.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.14.1/css/jquery.terminal.min.css" />
+</head>
+
+<body>
+    <div class="drone-selector">
+        <div class="drone column">
+            <div class="type">
+                <img src="drone.png">
+            </div>
+            <div class="drone-id">
+                BLINKY
+            </div>
+        </div>
+        <div class="drone column">
+            <div class="type">
+                <img src="drone.png">
+            </div>
+            <div class="drone-id">
+                BUGGY
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="controller">
+            <div class="column">
+                <div class="selector" style="padding: 2em;">
+                    <div class="row">
+                        <label style="margin:5px 20px 0px 0px"> Auto </label>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider2 round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="slidecontainer">
+                    <label>Forward</label>
+                    <input type="range" min="1" max="100" value="50" class="slider" id="forward">
+                </div>
+                <div class="slidecontainer">
+                    <label>Backward</label>
+                    <input type="range" min="1" max="100" value="50" class="slider" id="backward">
+                </div>
+                <div class="slidecontainer">
+                    <label>Left</label>
+                    <input type="range" min="1" max="100" value="50" class="slider" id="left">
+                </div>
+                <div class="slidecontainer">
+                    <label>Right</label>
+                    <input type="range" min="1" max="100" value="50" class="slider" id="right">
+                </div>
+                <div class="slidecontainer">
+                    <label>Rotate</label>
+                    <input type="range" min="1" max="100" value="50" class="slider" id="rotate">
+                </div>
+            </div>
+        </div>
+        <div class="video-feed">
+
+        </div>
+    </div>
+    <div class="terminal"></div>
+    </div>
+    <script>
+        let active = false;
+        $('.drone').click(()=>{
+            active=true;
+        })
+        if(active){
+            setTimeout(()=>{},1000);
+            
+        }
+        $('.terminal').terminal((cmd, t) => {
+            if (cmd == 'start') {
+            }
+        }, {
+            greetings: 'Welcome to Drone-Web'
+        });
+    </script>
+</body>
+
+</html>
